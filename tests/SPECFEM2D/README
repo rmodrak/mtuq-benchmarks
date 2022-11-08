@@ -1,0 +1,53 @@
+
+HOW TO COMPILE SPECFEM2D
+
+(requires gfortran, MPI)
+
+
+1. Download SPECFEM2D source code:
+
+>> git clone https://github.com/SPECFEM/specfem2D.git
+>> cd specfem2D
+
+
+2. To make sure our results can be exactly reproduced, we specify a particular
+version of the code using its Git hash. To obtain this specific version:
+
+>> git reset --hard ccc2b928
+
+
+3. Compile SPECFEM2D:
+
+>> ./configure FC=gfortran --with-mpi
+>> make
+
+
+
+HOW TO RUN SPECFEM2D VALIDATION TEST
+
+(requires 4 CPU cores, approximate run time 2 hours)
+
+
+1. Following the instructions above, download and compile SPECFEM2D in a 
+directory of your choice.
+
+
+2. Navigate to the SPECFEM2D validation test directory:
+
+>> cd mtuq_benchmarks/1D_tests/SPECFEM2D
+
+
+3. Copy SPECFEM2D executables:
+
+>> cp path/to/executables/{xmeshfem2D,xspecfem2D} bin/
+
+
+4. Run the mesher executable:
+
+>> mpirun -n 4 bin/xmeshfem2D
+
+
+5. Run the solver executable:
+
+>> mpirun -n 4 bin/xspecfem2D
+
