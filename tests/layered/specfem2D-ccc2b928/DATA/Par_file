@@ -17,7 +17,7 @@ NOISE_TOMOGRAPHY                = 0
 SAVE_FORWARD                    = .false.
 
 # parameters concerning partitioning
-NPROC                           = 4              # number of processes
+NPROC                           = 6              # number of processes
 
 # time step parameters
 # total number of time steps
@@ -312,10 +312,10 @@ absorbleft                      = .true.
 # define the different regions of the model in the (nx,nz) spectral-element mesh
 nbregions                       = 4              # then set below the different regions and model number for each region
 # format of each line: nxmin nxmax nzmin nzmax material_number
-1 1200   1 144 4
-1 1200 145 160 3
-1 1200 161 170 2
-1 1200 171 174 1
+1 1200   1 145 4
+1 1200 146 161 3
+1 1200 162 171 2
+1 1200 172 174 1
 
 #-----------------------------------------------------------
 #
